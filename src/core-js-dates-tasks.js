@@ -50,10 +50,9 @@ function getTime(date) {
  * '03 Dec 1995 00:12:00 UTC' => 'Sunday'
  * '2024-01-30T00:00:00.000Z' => 'Tuesday'
  */
-function getDayName(/* date */) {
-  throw new Error('Not implemented');
-  // const dateElem = new Date(date);
-  // return new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(dateElem);
+function getDayName(date) {
+  const dateElem = new Date(date);
+  return new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(dateElem);
 }
 
 /**
@@ -275,24 +274,25 @@ function getQuarter(date) {
  * { start: '01-01-2024', end: '15-01-2024' }, 1, 3 => ['01-01-2024', '05-01-2024', '09-01-2024', '13-01-2024']
  * { start: '01-01-2024', end: '10-01-2024' }, 1, 1 => ['01-01-2024', '03-01-2024', '05-01-2024', '07-01-2024', '09-01-2024']
  */
-function getWorkSchedule(period, countWorkDays, countOffDays) {
-  const startDate = new Date(period.start.split('-').reverse());
-  const endDate = new Date(period.end.split('-').reverse());
+function getWorkSchedule(/* period, countWorkDays, countOffDays */) {
+  throw new Error('Not implemented');
+  // const startDate = new Date(period.start.split('-').reverse());
+  // const endDate = new Date(period.end.split('-').reverse());
 
-  const workDays = [];
+  // const workDays = [];
 
-  while (startDate <= endDate) {
-    for (let i = 0; i < countWorkDays; i += 1) {
-      if (!(startDate <= endDate)) break;
-      const day = startDate.toLocaleDateString().split('.').join('-');
-      workDays.push(day);
-      startDate.setDate(startDate.getDate() + 1);
-    }
+  // while (startDate <= endDate) {
+  //   for (let i = 0; i < countWorkDays; i += 1) {
+  //     if (!(startDate <= endDate)) break;
+  //     const day = startDate.toLocaleDateString().split('.').join('-');
+  //     workDays.push(day);
+  //     startDate.setDate(startDate.getDate() + 1);
+  //   }
 
-    startDate.setDate(startDate.getDate() + countOffDays);
-  }
+  //   startDate.setDate(startDate.getDate() + countOffDays);
+  // }
 
-  return workDays;
+  // return workDays;
 }
 
 /**
