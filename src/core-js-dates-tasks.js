@@ -229,7 +229,10 @@ function getWeekNumberByDate(date) {
  */
 function getNextFridayThe13th(date) {
   const dateElem = new Date(date);
-  dateElem.setDate(13);
+
+  if (dateElem.getDate() !== 13) {
+    dateElem.setDate(13);
+  }
 
   while (dateElem.getDay() !== 5) {
     dateElem.setMonth(dateElem.getMonth() + 1);
