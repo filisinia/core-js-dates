@@ -69,7 +69,7 @@ function getDayName(date) {
 function getNextFriday(date) {
   const dateElem = new Date(date);
   const dayOfWeek = date.getDay();
-  let daysToFriday = 5 - dayOfWeek - 1;
+  let daysToFriday = 5 - dayOfWeek;
 
   if (daysToFriday <= 0) {
     daysToFriday += 7;
